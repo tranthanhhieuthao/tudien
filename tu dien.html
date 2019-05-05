@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<b>Từ Điển</b>
+
+<br/>
+<br/>
+<input type="button" value="English to VietNam" onclick="ham()"/>
+<input type="button" value="VietNam to English" onclick="ham1()"/>
+<br/>
+<br/>
+<p id="Ketqua"></p>
+<script>
+let English=["want","eat","drink","like","bored","hate","love"];
+let TiengViet=["muốn","ăn","uống","thích","buồn","ghét","yêu"];
+function ham() {
+    let Nhaptienganh = prompt("Nhap tieng anh");
+    let ketqua;
+    for (let i = 0; i < English.length; i++) {
+
+        if (English[i] == Nhaptienganh) {
+            ketqua =TiengViet[i];
+            break;
+        }
+        else {
+       ketqua ="Không có từ này trong từ điển";
+          }
+    }
+    document.getElementById("Ketqua").innerHTML="Nghĩa tiếng việt của từ"+" "+Nhaptienganh+" "+"là"+": "+ketqua;
+}
+function ham1() {
+    let Nhaptiengviet = prompt("Nhap tieng viet");
+    let ketqua="";
+    for (let i = 0; i < TiengViet.length; i++) {
+
+        if (TiengViet[i] == Nhaptiengviet) {
+            ketqua =English[i];
+            break;
+        }
+        else {
+            ketqua ="Không có từ này trong từ điển";
+        }
+    }
+    document.getElementById("Ketqua").innerHTML="Nghĩa tiếng anh của từ"+" "+Nhaptiengviet+" "+"là"+": "+ketqua;
+}
+
+
+
+</script>
+</body>
+</html>
